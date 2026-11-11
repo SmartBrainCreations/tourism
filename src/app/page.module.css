@@ -1,0 +1,695 @@
+.page {
+  background: #ffffff;
+  color: #86472c;
+  font-family: var(--font-kalam), "Comic Sans MS", cursive;
+}
+
+.page img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  background: #182b36;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 24, 37, 0.78), rgba(7, 24, 37, 0.12));
+  content: "";
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(360px, 438fr) minmax(0, 1272fr);
+  gap: 26px;
+  width: min(100% - 64px, 1596px);
+  min-height: 720px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 100px 0 0;
+}
+
+.heroTextGroup {
+  color: #efdcbe;
+  padding: 0 0 50px;
+}
+
+.heroTextGroup h1 {
+  margin: 0;
+  font-size: clamp(42px, 4vw, 64px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: clamp(17px, 1.4vw, 24px);
+  line-height: 1.5;
+  color: #efdcbe;
+}
+
+.heroExplore,
+.themeButton,
+.seasonalLink {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #c46314;
+  color: #efdcbe;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.heroExplore {
+  margin-top: 34px;
+  padding: 12px;
+}
+
+.heroExplore:hover,
+.heroExplore:focus-visible,
+.themeButton:hover,
+.themeButton:focus-visible,
+.seasonalLink:hover,
+.seasonalLink:focus-visible {
+  background: #86472c;
+}
+
+.heroExplore:focus-visible,
+.themeButton:focus-visible,
+.seasonalLink:focus-visible,
+.destinationCard:focus-visible,
+.readMore:focus-visible,
+.footer a:focus-visible {
+  outline: 3px solid #c46314;
+  outline-offset: 4px;
+}
+
+.experienceRail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 300px);
+  gap: 24px;
+  overflow-x: auto;
+  padding: 0 0 14px;
+  scrollbar-width: thin;
+}
+
+.experienceCard {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #8d6a4d;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.experienceCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.experienceOverlay {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.62));
+}
+
+.experienceLabel {
+  position: absolute;
+  left: 16px;
+  bottom: 18px;
+  right: 16px;
+  color: #efdcbe;
+  font-size: clamp(24px, 1.9vw, 36px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.introSection {
+  width: min(100% - 64px, 1596px);
+  margin: 0 auto;
+  padding: 48px 0 38px;
+  text-align: center;
+  color: #86472c;
+}
+
+.introSection h2 {
+  margin: 0;
+  font-size: clamp(36px, 3vw, 54px);
+  line-height: 1.1;
+}
+
+.introLead {
+  margin: 20px 0 10px;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.introSection p {
+  max-width: 1596px;
+  margin: 20px auto 0;
+  color: #86472c;
+  font-size: clamp(16px, 1.25vw, 24px);
+  line-height: 1.55;
+}
+
+.exploreLink {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: #c46314;
+  color: #fffdfa;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.exploreLink:hover,
+.exploreLink:focus-visible {
+  background: #c46314;
+}
+
+.exploreLink:focus-visible {
+  outline: 3px solid #c46314;
+  outline-offset: 4px;
+}
+
+.destinationSection,
+.themeSection,
+.storiesSection {
+  width: min(100% - 64px, 1596px);
+  margin: 0 auto;
+  padding-top: 28px;
+}
+
+.destinationSection h2,
+.themeSection h2,
+.storiesSection h2,
+.seasonalSection > h2 {
+  margin: 0 0 18px;
+  text-align: center;
+  color: #86472c;
+  font-size: clamp(36px, 3vw, 54px);
+  line-height: 1.1;
+}
+
+.destinationGrid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 462px);
+  gap: 24px;
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+}
+
+.destinationCard {
+  position: relative;
+  display: block;
+  height: 292px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #d6c8b4;
+  color: #efdcbe;
+  text-decoration: none;
+}
+
+.destinationCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 180ms ease;
+}
+
+.destinationCard:hover img {
+  transform: scale(1.04);
+}
+
+.destinationOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.62));
+}
+
+.destinationInfo {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 18px;
+  z-index: 1;
+  color: #efdcbe;
+}
+
+.destinationInfo strong {
+  margin: 0;
+  font-size: clamp(24px, 1.9vw, 36px);
+}
+
+.destinationInfo span {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.themeGrid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 462px);
+  gap: 24px;
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+}
+
+.themeCard {
+  display: flex;
+  min-height: 690px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 24px;
+  border-radius: 8px;
+  background: #efdcbe;
+  color: #86472c;
+}
+
+.themeCard h3 {
+  margin: auto 0 18px;
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.themeCard p {
+  min-height: 96px;
+  margin: 0;
+  color: #86472c;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.themeButton {
+  min-width: 138px;
+  margin-top: 18px;
+  padding: 12px;
+  background: #86472c;
+}
+
+.seasonalSection {
+  width: min(100% - 64px, 1596px);
+  margin: 0 auto;
+  padding-top: 44px;
+}
+
+.seasonalFeature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-height: 608px;
+  background: #f9f3eb;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.seasonalTextBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 60px);
+  background: #efdcbe;
+  color: #86472c;
+}
+
+.seasonalTitle {
+  font-size: clamp(36px, 3vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.seasonalSubtitle {
+  margin-top: 4px;
+  font-size: clamp(18px, 1.4vw, 24px);
+  font-weight: 700;
+}
+
+.seasonalHeadline {
+  margin-top: 24px;
+  font-size: clamp(24px, 1.9vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.seasonalTextBlock p {
+  margin: 16px 0 0;
+  font-size: clamp(18px, 1.25vw, 24px);
+  line-height: 1.55;
+}
+
+.seasonalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seasonalLink {
+  align-self: flex-start;
+  margin-top: 22px;
+  padding: 12px 16px;
+}
+
+.storiesSection {
+  padding-top: 30px;
+  padding-bottom: 46px;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.storyCard {
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.storyAuthorBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #86472c;
+}
+
+.storyAvatar {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorName {
+  font-size: clamp(16px, 1.5vw, 21px);
+  font-weight: 700;
+}
+
+.authorLocation {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.storyCard h3 {
+  margin: 12px 0 8px;
+  font-size: clamp(20px, 1.6vw, 24px);
+  line-height: 1.4;
+  color: #86472c;
+}
+
+.storyCard p {
+  min-height: 145px;
+  margin: 0;
+  color: #86472c;
+  font-size: clamp(16px, 1.25vw, 20px);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.readMore {
+  display: inline-block;
+  margin-top: 16px;
+  color: #86472c;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer {
+  margin-top: 12px;
+  padding: 28px 0 18px;
+  background: #efdcbe;
+  color: #86472c;
+}
+
+.footerInner {
+  width: min(100% - 64px, 1596px);
+  margin: 0 auto;
+}
+
+.footerBrand {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footerTagline {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footerText {
+  max-width: 720px;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.footerColumns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 20px auto 0;
+  max-width: 900px;
+  text-align: left;
+}
+
+.footerColumns h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.footerColumns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  color: #86472c;
+  font-size: 13px;
+}
+
+.footerColumns a {
+  color: inherit;
+}
+
+.copyright {
+  width: min(100% - 64px, 1596px);
+  margin: 18px auto 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(134, 71, 44, 0.2);
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    align-items: end;
+    gap: 14px;
+    padding-top: 86px;
+    padding-bottom: 28px;
+  }
+
+  .heroTextGroup {
+    padding: 0;
+  }
+
+  .experienceRail {
+    grid-auto-columns: minmax(230px, 300px);
+  }
+
+  .heroContent,
+  .hero {
+    min-height: 760px;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroContent,
+  .introSection,
+  .destinationSection,
+  .themeSection,
+  .seasonalSection,
+  .storiesSection,
+  .footerInner,
+  .copyright {
+    width: min(100% - 28px, 1596px);
+  }
+
+  .experienceRail {
+    grid-auto-columns: 72vw;
+  }
+
+  .experienceCard {
+    height: 340px;
+  }
+
+  .destinationGrid {
+    grid-auto-columns: 80vw;
+  }
+
+  .themeGrid {
+    grid-auto-columns: 82vw;
+  }
+
+  .themeCard {
+    min-height: 400px;
+  }
+
+  .storyGrid,
+  .footerColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .seasonalFeature {
+    grid-template-columns: 1fr;
+  }
+
+  .seasonalImage {
+    min-height: 190px;
+  }
+
+  .destinationCard {
+    height: 230px;
+  }
+
+  .storyAvatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .heroTextGroup h1,
+  .introSection h2,
+  .destinationSection h2,
+  .themeSection h2,
+  .seasonalSection > h2,
+  .storiesSection h2 {
+    font-size: 38px;
+  }
+
+  .seasonalTextBlock {
+    padding: 28px 20px;
+  }
+
+  .seasonalTitle {
+    font-size: 36px;
+  }
+
+  .seasonalHeadline {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .storyGrid,
+  .footerColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .themeCard {
+    min-height: 360px;
+  }
+
+  .storyCard p {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent,
+  .introSection,
+  .destinationSection,
+  .themeSection,
+  .seasonalSection,
+  .storiesSection,
+  .footerInner,
+  .copyright {
+    width: min(100% - 24px, 1596px);
+  }
+
+  .hero {
+    min-height: 390px;
+  }
+
+  .heroContent {
+    min-height: 390px;
+    padding-top: 78px;
+  }
+
+  .heroTextGroup h1 {
+    font-size: 36px;
+  }
+
+  .destinationCard {
+    height: 130px;
+  }
+
+  .destinationInfo {
+    left: 9px;
+    right: 9px;
+    bottom: 10px;
+  }
+
+  .destinationInfo h3 {
+    font-size: 16px;
+  }
+
+  .destinationInfo span {
+    font-size: 10px;
+  }
+
+  .themeCard {
+    padding: 8px;
+  }
+
+  .themeImage {
+    height: 110px;
+  }
+
+  .themeCard p {
+    font-size: 11px;
+  }
+
+  .footerColumns {
+    gap: 18px 10px;
+  }
+}

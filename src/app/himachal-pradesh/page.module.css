@@ -1,0 +1,509 @@
+.page {
+  --cream: #efdcbe;
+  --brown: #86472c;
+  --ink: #2b211c;
+  --background: #fffdfa;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--brown);
+  font-family: var(--font-kalam), "Comic Sans MS", cursive;
+}
+
+.page img {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  background: #2d342d;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(15 19 16 / 62%), rgb(15 19 16 / 12%));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: min(1596px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 130px 0 62px;
+  color: var(--cream);
+}
+
+.heroContent h1 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 18px 0 0;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+}
+
+.heroDescription {
+  max-width: 850px;
+  margin: 10px 0 0;
+  font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.section {
+  width: min(1596px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-bottom: 32px;
+}
+
+.titleBlock {
+  padding: 42px 0 28px;
+  text-align: center;
+}
+
+.titleBlock h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 3.375rem);
+  line-height: 1.2;
+}
+
+.titleBlock p,
+.sectionLead {
+  max-width: 1250px;
+  margin: 18px auto 0;
+  font-size: clamp(1.1rem, 1.45vw, 1.5rem);
+  line-height: 1.55;
+}
+
+.bandHeader {
+  margin-top: 16px;
+  padding: 20px 12px;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+  font-size: clamp(1.75rem, 2vw, 2.25rem);
+  font-weight: 700;
+}
+
+.introGrid,
+.splitFeature {
+  display: grid;
+  grid-template-columns: minmax(0, 624fr) minmax(0, 948fr);
+  gap: 24px;
+  align-items: center;
+  padding: 32px 0 14px;
+}
+
+.featureImageWrap {
+  position: relative;
+  min-height: 320px;
+  aspect-ratio: 624 / 400;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ddd3c4;
+}
+
+.featureImageWrap img,
+.destinationImage img,
+.bannerImage img,
+.otherPlaceCard img {
+  object-fit: cover;
+}
+
+.introCopy p,
+.featureCopy p,
+.destinationCopy p,
+.longCopy p,
+.infoCard p,
+.detailCard p,
+.detailCard li,
+.foodCategories p {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.25vw, 1.4rem);
+  line-height: 1.65;
+}
+
+.destinationList {
+  display: grid;
+  gap: 34px;
+  padding: 30px 0 16px;
+}
+
+.destination {
+  display: grid;
+  grid-template-columns: minmax(0, 624fr) minmax(0, 948fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.destinationReverse {
+  grid-template-columns: minmax(0, 948fr) minmax(0, 624fr);
+}
+
+.destinationReverse .destinationImage {
+  order: 2;
+}
+
+.destinationImage {
+  position: relative;
+  min-height: 280px;
+  aspect-ratio: 624 / 367;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ddd3c4;
+}
+
+.destinationCopy h3 {
+  margin: 0 0 14px;
+  color: var(--brown);
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.destinationCopy p {
+  margin-bottom: 0;
+}
+
+.bannerImage {
+  position: relative;
+  margin-top: 24px;
+  aspect-ratio: 1596 / 428;
+  min-height: 230px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ddd3c4;
+}
+
+.longCopy {
+  padding: 18px 0 0;
+}
+
+.longCopy p:last-child {
+  margin-bottom: 0;
+}
+
+.infoGrid,
+.seasonGrid,
+.experienceGrid,
+.handicraftGrid,
+.routeGrid,
+.otherPlacesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding-top: 26px;
+}
+
+.infoCard,
+.detailCard {
+  padding: 22px 24px;
+  border: 1px solid rgb(134 71 44 / 15%);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgb(46 32 22 / 4%);
+}
+
+.infoCard h3,
+.featureCopy h3,
+.foodCategories h3,
+.detailCard h3 {
+  margin: 0 0 10px;
+  color: var(--brown);
+  font-size: clamp(1.45rem, 1.8vw, 2rem);
+}
+
+.infoCard p:last-child,
+.detailCard p:last-child,
+.foodCategories p:last-child {
+  margin-bottom: 0;
+}
+
+.splitFeature {
+  grid-template-columns: minmax(0, 624fr) minmax(0, 948fr);
+}
+
+.featureCopy > p {
+  margin-bottom: 20px;
+}
+
+.featureCopy .foodList {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.foodList li {
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  line-height: 1.6;
+}
+
+.foodList li:last-child {
+  margin-bottom: 0;
+}
+
+.foodCategories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.foodCategories article {
+  padding: 18px 20px;
+  background: #f8f0e5;
+  border-radius: 8px;
+}
+
+.seasonGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.seasonDates {
+  color: var(--brown) !important;
+  font-weight: 700;
+}
+
+.routeGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding-top: 26px;
+}
+
+.detailCard ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.detailCard li:last-child {
+  margin-bottom: 0;
+}
+
+.experienceGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.handicraftGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.otherPlacesGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.otherPlaceCard {
+  position: relative;
+  display: block;
+  min-height: 250px;
+  aspect-ratio: 462 / 292;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #493b31;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.otherPlaceOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(0 0 0 / 72%), rgb(0 0 0 / 4%) 75%);
+}
+
+.otherPlaceText {
+  position: absolute;
+  right: 16px;
+  bottom: 18px;
+  left: 16px;
+  display: grid;
+  gap: 4px;
+}
+
+.otherPlaceText strong {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  line-height: 1.15;
+}
+
+.otherPlaceText > span {
+  font-size: 1rem;
+}
+
+.otherPlaceCard:hover img {
+  transform: scale(1.04);
+  transition: transform 180ms ease;
+}
+
+.otherPlaceCard:focus-visible,
+.footer a:focus-visible,
+.imageCredits a:focus-visible {
+  outline: 3px solid #c46314;
+  outline-offset: 3px;
+}
+
+.footer {
+  margin-top: 24px;
+  padding: 40px 24px 24px;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+}
+
+.footerBrand {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.footerTagline {
+  margin: 6px 0 18px;
+  font-size: 1.2rem;
+}
+
+.footerText {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 850px;
+  margin: 28px auto 0;
+  text-align: left;
+}
+
+.footerLinks div {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+}
+
+.footerLinks h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.footerLinks a,
+.imageCredits a {
+  color: inherit;
+}
+
+.copyright {
+  margin: 26px 0 0;
+  font-size: 1.05rem;
+}
+
+.imageCredits {
+  max-width: 900px;
+  margin: 18px auto 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.imageCredits summary {
+  cursor: pointer;
+  text-align: center;
+}
+
+.imageCredits ul {
+  display: grid;
+  gap: 5px;
+  padding-left: 22px;
+}
+
+@media (max-width: 900px) {
+  .destination,
+  .destinationReverse,
+  .introGrid,
+  .splitFeature {
+    grid-template-columns: 1fr;
+  }
+
+  .destinationReverse .destinationImage {
+    order: 0;
+  }
+
+  .seasonGrid,
+  .routeGrid,
+  .experienceGrid,
+  .handicraftGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bannerImage {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroContent,
+  .section {
+    width: min(100% - 32px, 1596px);
+  }
+
+  .heroContent {
+    padding-top: 130px;
+  }
+
+  .heroContent h1 {
+    font-size: 2.8rem;
+  }
+
+  .introGrid,
+  .splitFeature {
+    gap: 18px;
+    padding-top: 22px;
+  }
+
+  .featureImageWrap {
+    min-height: 230px;
+  }
+
+  .destinationImage {
+    min-height: 220px;
+  }
+
+  .destinationList {
+    gap: 26px;
+  }
+
+  .infoGrid,
+  .seasonGrid,
+  .routeGrid,
+  .twoColumn,
+  .experienceGrid,
+  .handicraftGrid,
+  .otherPlacesGrid,
+  .foodCategories,
+  .footerLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .bannerImage {
+    min-height: 190px;
+  }
+
+  .infoCard,
+  .detailCard {
+    padding: 18px;
+  }
+}

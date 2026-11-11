@@ -1,0 +1,360 @@
+.page {
+  --cream: #efdcbe;
+  --brown: #86472c;
+  --ink: #2b1d1a;
+  --muted: #5a473f;
+  --background: #fffdfa;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--brown);
+  font-family: var(--font-kalam), "Comic Sans MS", cursive;
+}
+
+.page img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  background: #1f1b1a;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) saturate(0.8);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.18));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 180px 32px 24px;
+  color: var(--cream);
+}
+
+.title {
+  font-size: clamp(2.5rem, 3vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.subtitleWrap {
+  margin-top: 10px;
+  max-width: 900px;
+}
+
+.tagline {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+}
+
+.subText {
+  margin-top: 10px;
+  font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+  line-height: 1.4;
+  color: rgba(239, 220, 190, 0.95);
+}
+
+.section {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 32px 28px;
+}
+
+.titleBlock {
+  padding: 40px 0 16px;
+  text-align: center;
+}
+
+.titleBlock h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 3.4vw, 3.8rem);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.titleBlock p {
+  max-width: 1100px;
+  margin: 18px auto 0;
+  font-size: clamp(1.2rem, 1.5vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--brown);
+}
+
+.bandHeader {
+  margin-top: 14px;
+  padding: 18px 0;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-weight: 700;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(280px, 624px) minmax(0, 1fr);
+  gap: 38px;
+  align-items: center;
+  padding: 26px 0 14px;
+}
+
+.featureImageWrap img {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.introCopy h2 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 2.4vw, 3rem);
+}
+
+.introCopy p {
+  margin: 0 0 16px;
+  font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.destinationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 32px 40px;
+  padding-top: 30px;
+}
+
+.destinationCard {
+  display: grid;
+  grid-template-columns: minmax(280px, 624px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.destinationCard:nth-child(2n) {
+  direction: rtl;
+}
+
+.destinationCard:nth-child(2n) > * {
+  direction: ltr;
+}
+
+.imageWrapLeft,
+.imageWrapRight {
+  width: 100%;
+}
+
+.imageWrapLeft img,
+.imageWrapRight img {
+  width: 100%;
+  height: 366px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.destinationText {
+  color: var(--brown);
+}
+
+.destinationText h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  line-height: 1.4;
+}
+
+.destinationText p {
+  margin: 0;
+  font-size: clamp(1.08rem, 1.3vw, 1.4rem);
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.fullWidthImageWrap {
+  margin-top: 26px;
+}
+
+.fullWidthImageWrap img {
+  width: 100%;
+  height: 428px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cultureText {
+  padding-top: 18px;
+}
+
+.cultureText p,
+.foodText,
+.visitText {
+  margin: 12px 0 0;
+  font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.pillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 26px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(134, 71, 44, 0.18);
+  color: var(--brown);
+  font-size: 1.1rem;
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding-top: 26px;
+}
+
+.timelineCard {
+  padding: 20px 18px;
+  border: 1px solid rgba(134, 71, 44, 0.12);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(30, 22, 18, 0.03);
+}
+
+.timelineCard h3 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
+}
+
+.timelineCard p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.detailBlock {
+  margin-top: 26px;
+  padding: 24px 26px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(134, 71, 44, 0.12);
+}
+
+.detailBlock p,
+.detailBlock li {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.3vw, 1.4rem);
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.detailBlock ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.footer {
+  margin-top: 22px;
+  padding: 52px 32px 30px;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+}
+
+.footerBrand {
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-weight: 700;
+}
+
+.footerTagline {
+  margin: 8px 0 18px;
+  font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+}
+
+.footerText {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 1.3vw, 1.35rem);
+  line-height: 1.7;
+}
+
+.footerLinks {
+  max-width: 980px;
+  margin: 26px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.footerLinks h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.footerLinks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.copyright {
+  margin-top: 30px;
+  font-size: 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .introGrid,
+  .destinationCard,
+  .footerLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .destinationCard:nth-child(2n) {
+    direction: ltr;
+  }
+
+  .destinationCard:nth-child(2n) > * {
+    direction: ltr;
+  }
+}
+
+@media (max-width: 560px) {
+  .heroContent,
+  .section,
+  .footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .titleBlock h1 {
+    text-decoration: none;
+  }
+}

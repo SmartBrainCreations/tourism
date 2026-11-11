@@ -1,0 +1,349 @@
+.page {
+  --cream: #efdcbe;
+  --brown: #86472c;
+  --ink: #2b211c;
+  min-height: 100vh;
+  background: #fffdfa;
+  color: var(--brown);
+  font-family: var(--font-kalam), "Comic Sans MS", cursive;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 720px;
+  align-items: center;
+  overflow: hidden;
+  background: #30271f;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 54%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(20 16 11 / 70%), rgb(20 16 11 / 12%));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: min(1596px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-top: 40px;
+  color: var(--cream);
+}
+
+.heroContent h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.heroContent p {
+  max-width: 700px;
+  margin: 22px 0 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.55;
+}
+
+.section {
+  width: min(1596px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 18px 0 48px;
+  scroll-margin-top: 90px;
+}
+
+.titleBlock {
+  padding: 50px 0 42px;
+  text-align: center;
+}
+
+.titleBlock h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 3.375rem);
+  line-height: 1.2;
+}
+
+.titleBlock > p {
+  max-width: 1250px;
+  margin: 22px auto 0;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.4vw, 1.5rem);
+  line-height: 1.65;
+}
+
+.sectionLead {
+  margin: 16px 0 0;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+}
+
+.bandHeader {
+  margin: 16px 0 0;
+  padding: 20px 14px;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+  font-size: clamp(1.75rem, 2.8vw, 3.375rem);
+  line-height: 1.25;
+}
+
+.bannerImage {
+  position: relative;
+  min-height: 230px;
+  margin-top: 28px;
+  overflow: hidden;
+  aspect-ratio: 1596 / 450;
+  border-radius: 8px;
+  background: #ddd3c4;
+}
+
+.bannerImage img,
+.otherPlaceCard img {
+  object-fit: cover;
+}
+
+.longCopy {
+  padding: 20px 0 4px;
+}
+
+.longCopy p,
+.festivalCard p,
+.storyCard p,
+.marketCard p,
+.closingCard p {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.25vw, 1.4rem);
+  line-height: 1.7;
+}
+
+.longCopy p:last-child,
+.festivalCard p:last-child,
+.storyCard p:last-child,
+.marketCard p:last-child,
+.closingCard p:last-child {
+  margin-bottom: 0;
+}
+
+.festivalGrid,
+.regionGrid,
+.storyGrid,
+.marketGrid,
+.otherPlacesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding-top: 26px;
+}
+
+.festivalCard,
+.storyCard,
+.marketCard,
+.closingCard {
+  padding: 24px;
+  border: 1px solid rgb(134 71 44 / 15%);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgb(46 32 22 / 4%);
+}
+
+.festivalCard > span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--brown);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.festivalCard h3,
+.storyCard h3,
+.marketCard h3,
+.closingCard h3 {
+  margin: 0 0 12px;
+  color: var(--brown);
+  font-size: clamp(1.45rem, 1.8vw, 2rem);
+  line-height: 1.3;
+}
+
+.closingCard {
+  margin-top: 24px;
+  background: #f8f0e5;
+}
+
+.closingCard h3 + p,
+.closingCard p + h3 {
+  margin-top: 18px;
+}
+
+.marketGrid,
+.otherPlacesGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.marketCard {
+  background: #f8f0e5;
+}
+
+.otherPlaceCard {
+  position: relative;
+  display: block;
+  min-height: 250px;
+  overflow: hidden;
+  aspect-ratio: 462 / 292;
+  border-radius: 8px;
+  background: #493b31;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.otherPlaceOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(0 0 0 / 72%), rgb(0 0 0 / 4%) 75%);
+}
+
+.otherPlaceText {
+  position: absolute;
+  right: 16px;
+  bottom: 18px;
+  left: 16px;
+  display: grid;
+  gap: 4px;
+}
+
+.otherPlaceText strong {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  line-height: 1.15;
+}
+
+.otherPlaceText > span {
+  font-size: 1rem;
+}
+
+.otherPlaceCard:hover img {
+  transform: scale(1.04);
+  transition: transform 180ms ease;
+}
+
+.otherPlaceCard:focus-visible,
+.footer a:focus-visible {
+  outline: 3px solid #c46314;
+  outline-offset: 3px;
+}
+
+.subsectionHeading {
+  margin: 36px 0 0;
+  color: var(--brown);
+  font-size: clamp(1.6rem, 2.4vw, 2.25rem);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 24px;
+  padding: 40px 24px 24px;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+}
+
+.footerBrand {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.footerTagline {
+  margin: 6px 0 18px;
+  font-size: 1.2rem;
+}
+
+.footerText {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 850px;
+  margin: 28px auto 0;
+  text-align: left;
+}
+
+.footerLinks div {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+}
+
+.footerLinks h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.footerLinks a {
+  color: inherit;
+}
+
+.copyright {
+  margin: 26px 0 0;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .regionGrid,
+  .marketGrid,
+  .otherPlacesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .heroContent,
+  .section {
+    width: min(100% - 32px, 1596px);
+  }
+
+  .heroContent h1 {
+    font-size: 2.8rem;
+  }
+
+  .bannerImage {
+    min-height: 190px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .festivalGrid,
+  .regionGrid,
+  .storyGrid,
+  .marketGrid,
+  .otherPlacesGrid,
+  .footerLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .festivalCard,
+  .storyCard,
+  .marketCard,
+  .closingCard {
+    padding: 18px;
+  }
+}

@@ -1,0 +1,152 @@
+.page {
+  background: #ffffff;
+  color: #86472c;
+  font-family: var(--font-kalam), "Comic Sans MS", cursive;
+}
+
+.page img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  background: url("/india/hero.jpg") center/cover;
+}
+
+.heroTint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 64px, 1596px);
+  margin: 0 auto;
+  padding-top: 180px;
+  padding-bottom: 30px;
+  color: #efdcbe;
+}
+
+.heroContent h1 {
+  margin: 0;
+  font-size: clamp(52px, 5vw, 64px);
+  line-height: 1.1;
+}
+
+.heroContent p {
+  margin: 14px 0 0;
+  font-size: 24px;
+  color: #efdcbe;
+}
+
+.section {
+  width: min(100% - 64px, 1596px);
+  margin: 0 auto;
+  padding: 28px 0 70px;
+}
+
+.heading {
+  margin: 0;
+  text-align: center;
+  color: #86472c;
+  font-size: clamp(36px, 3vw, 54px);
+  line-height: 1.2;
+}
+
+.subheading {
+  margin: 20px auto 0;
+  max-width: 1200px;
+  text-align: center;
+  color: #86472c;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.regionBlock {
+  margin-top: 38px;
+}
+
+.regionTitle {
+  margin-bottom: 18px;
+  text-align: center;
+  color: #86472c;
+  font-size: clamp(38px, 3vw, 54px);
+  font-weight: 700;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.stateCard {
+  position: relative;
+  height: 292px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #8d6a4d;
+}
+
+.stateCard::after {
+  position: absolute;
+  inset: 30% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.68));
+  content: "";
+}
+
+.stateCardLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.stateCardLink:focus-visible {
+  outline: 3px solid #c46314;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.stateCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stateMeta {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 18px;
+  z-index: 1;
+  color: #efdcbe;
+}
+
+.stateMeta h3 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.stateMeta span {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .heroContent,
+  .section {
+    width: min(100% - 28px, 1596px);
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}

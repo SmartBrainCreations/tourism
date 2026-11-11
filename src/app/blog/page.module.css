@@ -1,0 +1,380 @@
+.page {
+  --cream: #efdcbe;
+  --brown: #86472c;
+  --ink: #2b211c;
+  background: #fffdfa;
+  color: var(--brown);
+  font-family: var(--font-kalam), "Comic Sans MS", cursive;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 720px;
+  align-items: center;
+  overflow: hidden;
+  background: #30271f;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 54%;
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(20 16 11 / 72%), rgb(20 16 11 / 12%));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: min(1596px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-top: 40px;
+  color: var(--cream);
+}
+
+.heroContent h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.heroContent p {
+  max-width: 650px;
+  margin: 18px 0 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.heroLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 28px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #c46314;
+  color: var(--cream);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.heroLink:hover,
+.heroLink:focus-visible {
+  background: var(--brown);
+}
+
+.storiesSection,
+.destinations {
+  width: min(1596px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.storiesSection {
+  padding: 50px 0 34px;
+  scroll-margin-top: 80px;
+}
+
+.sectionIntro {
+  max-width: 1050px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.sectionIntro h2,
+.destinations > h2 {
+  margin: 0;
+  color: var(--brown);
+  font-size: clamp(2.2rem, 3.2vw, 3.375rem);
+  line-height: 1.2;
+}
+
+.sectionIntro p {
+  margin: 14px 0 0;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.35vw, 1.5rem);
+  line-height: 1.65;
+}
+
+.storyList {
+  display: grid;
+  gap: 24px;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(210px, 300px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 72px);
+  padding: 32px;
+  border: 1px solid rgb(134 71 44 / 13%);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgb(46 32 22 / 5%);
+}
+
+.story:nth-child(even) {
+  background: #fbf5ec;
+}
+
+.storyPhoto {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e8dccb;
+}
+
+.storyPhoto img {
+  object-fit: cover;
+}
+
+.storyContent {
+  min-width: 0;
+}
+
+.storyNumber {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #a06d45;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.storyContent h3 {
+  margin: 0;
+  color: var(--brown);
+  font-size: clamp(1.75rem, 2.8vw, 3.375rem);
+  line-height: 1.2;
+}
+
+.quote {
+  margin: 16px 0;
+  color: var(--brown);
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.storyBody p {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.storyBody p:last-child {
+  margin-bottom: 0;
+}
+
+.author {
+  margin: 14px 0 0;
+  color: var(--brown);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.destinations {
+  padding: 28px 0 54px;
+}
+
+.destinations > h2 {
+  text-align: center;
+}
+
+.destinationRegion {
+  padding-top: 30px;
+}
+
+.destinationRegion > h3 {
+  margin: 0 0 14px;
+  color: var(--brown);
+  font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+}
+
+.destinationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.destinationCard {
+  position: relative;
+  display: block;
+  min-height: 292px;
+  overflow: hidden;
+  aspect-ratio: 462 / 292;
+  border-radius: 8px;
+  background: #493b31;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.destinationCard img {
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.destinationCard:hover img {
+  transform: scale(1.04);
+}
+
+.cardShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(0 0 0 / 74%), rgb(0 0 0 / 3%) 75%);
+}
+
+.destinationText {
+  position: absolute;
+  right: 16px;
+  bottom: 20px;
+  left: 16px;
+  display: grid;
+  gap: 5px;
+}
+
+.destinationText strong {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  line-height: 1.15;
+}
+
+.destinationText span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.destinationCard:focus-visible,
+.footerNav a:focus-visible {
+  outline: 3px solid #c46314;
+  outline-offset: 3px;
+}
+
+.footer {
+  padding: 42px 24px 24px;
+  background: var(--cream);
+  color: var(--brown);
+  text-align: center;
+}
+
+.footerInner {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+}
+
+.footerInner > h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.footerTagline {
+  margin: 6px 0 18px;
+  font-size: 1.2rem;
+}
+
+.footerDescription {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.footerNav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.footerNav > div {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+}
+
+.footerNav h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.footerNav a {
+  color: inherit;
+}
+
+.copyright {
+  margin: 26px 0 0;
+  font-size: 1.05rem;
+}
+
+.heroLink:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .story {
+    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+    gap: 28px;
+    padding: 24px;
+  }
+
+  .destinationGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .heroContent,
+  .storiesSection,
+  .destinations {
+    width: min(100% - 32px, 1596px);
+  }
+
+  .heroContent h1 {
+    font-size: 2.8rem;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .storyPhoto {
+    width: min(52vw, 220px);
+  }
+
+  .destinationGrid,
+  .footerNav {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroLink,
+  .destinationCard img {
+    transition: none;
+  }
+}
