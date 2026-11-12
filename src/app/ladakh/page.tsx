@@ -246,48 +246,6 @@ export default function LadakhPage() {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerBrand}>Journey Through Ages</div>
-        <div className={styles.footerTagline}>Discover India, One Story at a Time</div>
-        <div className={styles.footerText}>
-          Journey Through Ages is your window into India’s rich heritage, breathtaking landscapes,
-          and vibrant traditions. From ancient temples to modern marvels, we bring you stories,
-          destinations, and experiences that define the heart of India. Explore, learn, and immerse
-          yourself in the timeless beauty of this incredible land.
-        </div>
-
-        <div className={styles.footerLinks}>
-          <div>
-            <h3>Quick Links</h3>
-            <ul>
-              <li>Home</li>
-              <li>Explore</li>
-              <li>Experiences</li>
-              <li>Travel Guides</li>
-              <li>Blog</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Resources</h3>
-            <ul>
-              <li>About India</li>
-              <li>Contact Us</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Connect With Us</h3>
-            <ul>
-              <li>Instagram</li>
-              <li>YouTube</li>
-              <li>Facebook</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className={styles.copyright}>© 2025 Incredible India 360. All Rights Reserved.</div>
-      </footer>
     </main>
   );
 }

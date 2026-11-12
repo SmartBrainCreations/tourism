@@ -167,8 +167,8 @@ export default function AboutIndiaPage() {
       <header className={styles.hero}>
         <Image
           className={styles.heroImage}
-          src="/india/hero.jpg"
-          alt="A scenic view representing the landscapes of India"
+          src="/slideshow/image-1794476590304.png"
+          alt="Historic stone temples set beside the sea"
           fill
           priority
           sizes="100vw"

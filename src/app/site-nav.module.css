@@ -7,8 +7,18 @@
   color: #efdcbe;
 }
 
+.legalHeader {
+  color: #86472c;
+}
+
+.legalHeader .link:hover,
+.legalHeader .link:focus-visible {
+  color: #c46314;
+}
+
 .inner {
   display: flex;
+  position: relative;
   align-items: center;
   gap: clamp(18px, 2vw, 36px);
   width: min(100% - 64px, 1596px);
@@ -28,6 +38,12 @@
   justify-content: center;
   gap: clamp(12px, 1.8vw, 36px);
   min-width: 0;
+}
+
+.mobileStartLink,
+.mobileSearch,
+.menuButton {
+  display: none;
 }
 
 .link {
@@ -53,14 +69,20 @@
   gap: 12px;
 }
 
+.searchWrap {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(150px, 16vw, 300px);
+}
+
 .search {
   display: flex;
   align-items: center;
-  width: clamp(150px, 16vw, 300px);
+  width: 100%;
   height: 40px;
   padding: 0 12px;
   border-radius: 8px;
-  background: #fff;
+  background: #fffdfa;
 }
 
 .search input {
@@ -84,8 +106,8 @@
   min-height: 40px;
   padding: 0 12px;
   border-radius: 8px;
-  background: #c46314;
-  color: #efdcbe;
+  background: #efdcbe;
+  color: #86472c;
   font-size: 1rem;
   font-weight: 700;
   white-space: nowrap;
@@ -94,7 +116,7 @@
 
 .startLink:hover,
 .startLink:focus-visible {
-  background: #86472c;
+  background: #dfc5a1;
 }
 
 .link:focus-visible,
@@ -109,6 +131,46 @@
   outline-offset: 2px;
 }
 
+.searchResults {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  z-index: 30;
+  max-height: min(360px, 60vh);
+  overflow-y: auto;
+  border: 1px solid rgba(134, 71, 44, 0.18);
+  border-radius: 10px;
+  background: #fffdfa;
+  color: #342820;
+  box-shadow: 0 10px 24px rgba(42, 33, 26, 0.2);
+}
+
+.searchResult {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.searchResult:hover,
+.searchResult[aria-selected="true"] {
+  background: #efdcbe;
+  color: #86472c;
+}
+
+.noSearchResults {
+  margin: 0;
+  padding: 12px 14px;
+  color: #6d594b;
+  font-size: 0.9rem;
+}
+
 .visuallyHidden {
   position: absolute;
   width: 1px;
@@ -120,7 +182,7 @@
 }
 
 @media (max-width: 1150px) {
-  .search {
+  .searchWrap:not(.mobileSearch) {
     display: none;
   }
 }
@@ -145,7 +207,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .inner {
     width: min(100% - 28px, 1596px);
     min-height: 58px;
@@ -157,20 +219,110 @@
   }
 
   .actions {
-    margin-left: auto;
+    display: none;
   }
 
-  .startLink {
-    min-width: 112px;
-    min-height: 36px;
-    padding: 0 8px;
-    font-size: 0.8rem;
+  .nav {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
+    padding: 8px 14px 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid rgba(239, 220, 190, 0.2);
+    border-radius: 0 0 12px 12px;
+    background: rgba(134, 71, 44, 0.99);
+    color: #efdcbe;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  }
+
+  .mobileSearch {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .mobileSearch .search {
+    background: #fffdfa;
+  }
+
+  .mobileSearch .searchResults {
+    top: calc(100% + 4px);
+  }
+
+  .nav.mobileOpen {
+    display: flex;
+  }
+
+  .link {
+    padding: 11px 4px;
+    border-bottom: 1px solid rgba(239, 220, 190, 0.15);
+    font-size: 1rem;
+  }
+
+  .mobileStartLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: 12px;
+    border-radius: 8px;
+    background: #efdcbe;
+    color: #86472c;
+    font-weight: 700;
+  }
+
+  .menuButton {
+    display: flex;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-left: auto;
+    padding: 0;
+    border: 1px solid rgba(239, 220, 190, 0.65);
+    border-radius: 8px;
+    background: rgba(98, 48, 29, 0.5);
+    color: #efdcbe;
+    cursor: pointer;
+  }
+
+  .legalHeader .menuButton {
+    border-color: rgba(134, 71, 44, 0.65);
+    background: rgba(239, 220, 190, 0.55);
+    color: #86472c;
+  }
+
+  .menuButton span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  .menuButton:focus-visible,
+  .mobileStartLink:focus-visible {
+    outline: 2px solid #efdcbe;
+    outline-offset: 3px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .link,
-  .startLink {
+  .startLink,
+  .mobileStartLink {
     transition: none;
   }
 }

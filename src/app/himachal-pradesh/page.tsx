@@ -605,58 +605,20 @@ export default function HimachalPradeshPage() {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerBrand}>Journey Through Ages</div>
-        <p className={styles.footerTagline}>Discover India, One Story at a Time</p>
-        <p className={styles.footerText}>
-          Journey Through Ages is your window into India’s rich heritage, breathtaking landscapes,
-          and vibrant traditions. From ancient temples to modern marvels, we bring you stories,
-          destinations, and experiences that define the heart of India. Explore, learn, and immerse
-          yourself in the timeless beauty of this incredible land.
-        </p>
-        <nav className={styles.footerLinks} aria-label="Footer navigation">
-          <div>
-            <h3>Quick Links</h3>
-            <Link href="/">Home</Link>
-            <Link href="/states">Explore</Link>
-            <Link href="/states">Experiences</Link>
-            <Link href="/states">Travel Guides</Link>
-          </div>
-          <div>
-            <h3>Resources</h3>
-            <Link href="/states">About India</Link>
-            <a href="mailto:hello@journeythroughages.in">Contact Us</a>
-            <Link href="/">Privacy Policy</Link>
-            <Link href="/">Terms of Use</Link>
-          </div>
-          <div>
-            <h3>Connect With Us</h3>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              Instagram
-            </a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-              YouTube
-            </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-              Facebook
-            </a>
-          </div>
-        </nav>
-        <p className={styles.copyright}>© 2025 Incredible India 360. All Rights Reserved.</p>
+      <section className={styles.section}>
         <details className={styles.imageCredits}>
           <summary>Image credits</summary>
           <ul>
             {imageCredits.map((credit) => (
-              <li key={credit.name}>
-                {credit.name} — {credit.creator},{" "}
+              <li key={credit.href}>
                 <a href={credit.href} target="_blank" rel="noreferrer">
-                  {credit.license}, Wikimedia Commons
+                  {credit.name} — {credit.creator} ({credit.license})
                 </a>
               </li>
             ))}
           </ul>
         </details>
-      </footer>
+      </section>
     </main>
   );
 }

@@ -1,15 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import HomeHero from "./home-hero";
 import styles from "./page.module.css";
-
-const experiences = [
-  { name: "Heritage", image: "/india/heritage.jpg", alt: "The Taj Mahal at sunrise" },
-  { name: "Nature", image: "/india/nature.jpg", alt: "Sunrise over a mountain range" },
-  { name: "Spiritual", image: "/india/spiritual.jpg", alt: "The Taj Mahal through a historic arch" },
-  { name: "Food", image: "/india/food.jpg", alt: "A warmly lit restaurant" },
-  { name: "Adventure", image: "/india/adventure.jpg", alt: "A traveler exploring a scenic landscape" },
-  { name: "Festivals", image: "/india/festivals.jpg", alt: "A colorful travel scene" },
-];
 
 const destinations = [
   {
@@ -69,31 +61,43 @@ const destinations = [
 const themes = [
   {
     name: "Heritage",
+    image: "/india/heritage.jpg",
+    alt: "Ancient stone temple architecture in India",
     description:
       "Step into India’s royal past through its majestic forts, palaces & ancient temples. Every monument tells a story of kings, empires & timeless artistry.",
   },
   {
     name: "Nature",
+    image: "/india/forest.jpg",
+    alt: "Lush green tea plantations and mountains",
     description:
       "From the misty Himalayas to the serene backwaters and golden deserts, India’s landscapes are pure magic. Explore nature in every form — tranquil & breathtakingly beautiful.",
   },
   {
     name: "Spiritual",
+    image: "/india/spiritual.jpg",
+    alt: "Pilgrims at a sacred riverside ghat in India",
     description:
       "Journey through sacred temples, mosques, churches, and monasteries across India. Experience peace, devotion, and the spiritual energy that unites a diverse nation.",
   },
   {
     name: "Adventure",
+    image: "/india/adventure.jpg",
+    alt: "Traveler canoeing through a scenic river landscape",
     description:
       "Feel the thrill with trekking, rafting, paragliding, and more across India’s stunning terrains. For every adventurer, there’s a challenge — from mountain peaks to roaring rivers.",
   },
   {
     name: "Food",
+    image: "/india/food.jpg",
+    alt: "Traditional Indian food platter on a dining table",
     description:
       "Taste the soul of India through its regional cuisines and vibrant street food. Each bite carries centuries of tradition, spice, and flavor.",
   },
   {
     name: "Festivals",
+    image: "/india/festivals.jpg",
+    alt: "Colorful celebration scene with bright travel festival lights",
     description:
       "Celebrate life with India’s grand festivals — Diwali, Holi, Durga Puja, Onam, and countless others. A land where every season, color, and sound turns into a joyful celebration.",
   },
@@ -129,43 +133,7 @@ const stories = [
 export default function Home() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <Image
-          className={styles.heroBg}
-          src="/himachal-pradesh/hero.jpg"
-          alt="Snowy Himalayan mountains in India"
-          fill
-          priority
-          sizes="100vw"
-        />
-
-        <div className={styles.heroContent}>
-          <div className={styles.heroTextGroup}>
-            <h1>Discover India</h1>
-            <p className={styles.subtitle}>
-              A Journey Through Culture, Nature &amp; Heritage
-            </p>
-            <Link className={styles.heroExplore} href="/states">
-              Start Exploring
-            </Link>
-          </div>
-
-          <div className={styles.experienceRail} aria-label="Explore India by experience">
-            {experiences.map((experience) => (
-              <article className={styles.experienceCard} key={experience.name}>
-                <Image
-                  src={experience.image}
-                  alt={experience.alt}
-                  fill
-                  sizes="(max-width: 700px) 72vw, 300px"
-                />
-                <div className={styles.experienceOverlay} />
-                <div className={styles.experienceLabel}>{experience.name}</div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       <section className={styles.introSection}>
         <h2>Join the Journey Through Ages</h2>
@@ -217,6 +185,9 @@ export default function Home() {
         <div className={styles.themeGrid}>
           {themes.map((theme) => (
             <article className={styles.themeCard} key={theme.name}>
+              <div className={styles.themeImageWrap}>
+                <Image src={theme.image} alt={theme.alt} fill sizes="(max-width: 700px) 100vw, 33vw" />
+              </div>
               <h3>{theme.name}</h3>
               <p>{theme.description}</p>
               <Link className={styles.themeButton} href="/states">
@@ -229,28 +200,29 @@ export default function Home() {
 
       <section className={styles.seasonalSection} id="seasonal">
         <h2>Seasonal Suggestions</h2>
-        <div className={styles.seasonalFeature}>
-          <div className={styles.seasonalTextBlock}>
-            <div className={styles.seasonalTitle}>Winter Wonders</div>
-            <div className={styles.seasonalSubtitle}>(November – February)</div>
-            <div className={styles.seasonalHeadline}>Best Places to Visit in Winter 2025</div>
-            <p>
-              Experience the charm of snow-covered mountains, desert festivals, and cozy hill
-              stations. Explore Shimla, Manali, Kashmir, Udaipur, or the magical Rann of Kutch under
-              the stars.
-            </p>
-            <Link className={styles.seasonalLink} href="/states">
-              Explore winter destinations
-            </Link>
+        <div className={styles.seasonalCarousel}>
+          <div className={styles.seasonalFeature}>
+            <div className={styles.seasonalTextBlock}>
+              <div className={styles.seasonalTitle}>
+                Monsoon Magic <span>(June - September)</span>
+              </div>
+              <h3>Monsoon Destinations in India</h3>
+              <p>
+                Watch India come alive in shades of green — from Kerala’s backwaters to Meghalaya’s
+                waterfalls. Ideal for travelers who love lush landscapes, misty mornings, and soulful
+                serenity.
+              </p>
+            </div>
+            <div className={styles.seasonalImageWrap}>
+              <Image
+                className={styles.seasonalImage}
+                src="/india/forest.jpg"
+                alt="Waterfall surrounded by lush green forest"
+                fill
+                sizes="(max-width: 700px) 100vw, 50vw"
+              />
+            </div>
           </div>
-          <Image
-            className={styles.seasonalImage}
-            src="/india/winter.jpg"
-            alt="Snow-covered Himalayan mountains beneath a starry sky"
-            width={900}
-            height={600}
-            sizes="(max-width: 700px) 100vw, 50vw"
-          />
         </div>
       </section>
 
@@ -267,8 +239,10 @@ export default function Home() {
                   width={300}
                   height={300}
                 />
-                <span className={styles.authorName}>{story.name},</span>
-                <span className={styles.authorLocation}>{story.location}</span>
+                <div className={styles.authorMeta}>
+                  <span className={styles.authorName}>{story.name},</span>
+                  <span className={styles.authorLocation}>{story.location}</span>
+                </div>
               </div>
               <h3>{story.title}</h3>
               <p>{story.description}</p>
@@ -280,49 +254,6 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <div className={styles.footerBrand}>Journey Through Ages</div>
-          <div className={styles.footerTagline}>Discover India, One Story at a Time</div>
-          <div className={styles.footerText}>
-            Journey Through Ages is your window into India’s rich heritage, breathtaking
-            landscapes, and vibrant traditions. From ancient temples to modern marvels, we bring you
-            stories, destinations, and experiences that define the heart of India. Explore, learn,
-            and immerse yourself in the timeless beauty of this incredible land.
-          </div>
-
-          <div className={styles.footerColumns}>
-            <div>
-              <h4>Quick Links</h4>
-              <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/states">Explore</Link></li>
-                <li><Link href="#themes">Experiences</Link></li>
-                <li><Link href="#destinations">Travel Guides</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4>Resources</h4>
-              <ul>
-                <li><Link href="/about-india">About India</Link></li>
-                <li><a href="mailto:hello@journeythroughages.com">Contact Us</a></li>
-                <li><Link href="#privacy">Privacy Policy</Link></li>
-                <li><Link href="#terms">Terms of Use</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4>Connect With Us</h4>
-              <ul>
-                <li><a href="https://www.instagram.com/">Instagram</a></li>
-                <li><a href="https://www.youtube.com/">YouTube</a></li>
-                <li><a href="https://www.facebook.com/">Facebook</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className={styles.copyright}>© 2025 Incredible India 360. All Rights Reserved.</div>
-      </footer>
     </main>
   );
 }

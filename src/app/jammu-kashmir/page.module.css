@@ -318,6 +318,10 @@
     padding-right: 18px;
   }
 
+  .featureImageWrap img {
+    height: clamp(220px, 70vw, 320px);
+  }
+
   .tagline {
     font-size: 1.5rem;
   }

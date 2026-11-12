@@ -29,6 +29,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: heroImageEnter 700ms ease both;
+}
+
+@keyframes heroImageEnter {
+  from {
+    opacity: 0.65;
+    transform: scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .heroContent {
@@ -77,6 +90,19 @@
   font-weight: 700;
   text-decoration: none;
   transition: background 160ms ease;
+}
+
+.experienceRail,
+.destinationGrid,
+.themeGrid {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.experienceRail::-webkit-scrollbar,
+.destinationGrid::-webkit-scrollbar,
+.themeGrid::-webkit-scrollbar {
+  display: none;
 }
 
 .heroExplore {
@@ -282,37 +308,53 @@
 .themeGrid {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(300px, 462px);
-  gap: 24px;
+  grid-auto-columns: minmax(300px, 420px);
+  gap: 28px;
   overflow-x: auto;
   padding: 10px 0 20px;
-  scrollbar-width: thin;
 }
 
 .themeCard {
   display: flex;
-  min-height: 690px;
+  min-height: 620px;
   flex-direction: column;
   align-items: center;
-  padding: 0 16px 24px;
-  border-radius: 8px;
-  background: #efdcbe;
+  padding: 0 20px 22px;
+  border-radius: 28px 28px 18px 18px;
+  background: #f0e0c5;
   color: #86472c;
+  box-shadow: 0 6px 12px rgba(134, 71, 44, 0.08);
+}
+
+.themeImageWrap {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  border-radius: 50% 50% 0 0 / 88% 88% 0 0;
+  margin-bottom: 18px;
+  background: #d7c9b7;
+}
+
+.themeImageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .themeCard h3 {
-  margin: auto 0 18px;
-  font-size: 36px;
+  margin: 0 0 16px;
+  font-size: clamp(28px, 2vw, 38px);
   line-height: 1.1;
   text-align: center;
 }
 
 .themeCard p {
-  min-height: 96px;
+  min-height: 128px;
   margin: 0;
   color: #86472c;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: clamp(15px, 1vw, 18px);
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -321,6 +363,7 @@
   margin-top: 18px;
   padding: 12px;
   background: #86472c;
+  color: #f9f3eb;
 }
 
 .seasonalSection {
@@ -329,48 +372,61 @@
   padding-top: 44px;
 }
 
+.seasonalCarousel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
 .seasonalFeature {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   align-items: stretch;
-  min-height: 608px;
+  min-height: 500px;
   background: #f9f3eb;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 8px 18px rgba(134, 71, 44, 0.08);
 }
 
 .seasonalTextBlock {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(28px, 4vw, 60px);
+  padding: clamp(30px, 4vw, 60px);
   background: #efdcbe;
   color: #86472c;
 }
 
 .seasonalTitle {
-  font-size: clamp(36px, 3vw, 48px);
+  font-size: clamp(28px, 2.3vw, 52px);
   font-weight: 700;
   line-height: 1.1;
 }
 
-.seasonalSubtitle {
-  margin-top: 4px;
-  font-size: clamp(18px, 1.4vw, 24px);
+.seasonalTitle span {
+  font-size: clamp(20px, 1.5vw, 32px);
   font-weight: 700;
 }
 
-.seasonalHeadline {
-  margin-top: 24px;
-  font-size: clamp(24px, 1.9vw, 36px);
-  font-weight: 700;
+.seasonalTextBlock h3 {
+  margin: 22px 0 14px;
+  font-size: clamp(22px, 2vw, 34px);
   line-height: 1.2;
+  color: #86472c;
 }
 
 .seasonalTextBlock p {
-  margin: 16px 0 0;
-  font-size: clamp(18px, 1.25vw, 24px);
-  line-height: 1.55;
+  margin: 0;
+  max-width: 560px;
+  font-size: clamp(18px, 1.4vw, 26px);
+  line-height: 1.5;
+  color: #86472c;
+}
+
+.seasonalImageWrap {
+  position: relative;
+  min-height: 500px;
 }
 
 .seasonalImage {
@@ -393,7 +449,8 @@
 .storyGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 32px;
+  align-items: start;
 }
 
 .storyCard {
@@ -405,55 +462,60 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   color: #86472c;
 }
 
 .storyAvatar {
-  width: 76px;
-  height: 76px;
-  margin-bottom: 4px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.authorName {
-  font-size: clamp(16px, 1.5vw, 21px);
-  font-weight: 700;
+.authorMeta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
 }
 
+.authorName,
 .authorLocation {
-  font-size: 13px;
+  font-size: clamp(22px, 1.8vw, 32px);
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .storyCard h3 {
-  margin: 12px 0 8px;
-  font-size: clamp(20px, 1.6vw, 24px);
+  margin: 18px 0 10px;
+  font-size: clamp(18px, 1.5vw, 28px);
   line-height: 1.4;
   color: #86472c;
 }
 
 .storyCard p {
-  min-height: 145px;
+  min-height: 180px;
   margin: 0;
   color: #86472c;
-  font-size: clamp(16px, 1.25vw, 20px);
+  font-size: clamp(16px, 1.2vw, 22px);
   line-height: 1.5;
   text-align: justify;
 }
 
 .readMore {
   display: inline-block;
-  margin-top: 16px;
+  margin-top: 18px;
   color: #86472c;
-  font-size: 20px;
+  font-size: clamp(18px, 1.4vw, 24px);
   font-weight: 700;
 }
 
 .footer {
   margin-top: 12px;
-  padding: 28px 0 18px;
+  padding: 30px 0 18px;
   background: #efdcbe;
   color: #86472c;
 }
@@ -464,7 +526,7 @@
 }
 
 .footerBrand {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   text-align: center;
 }
@@ -472,14 +534,14 @@
 .footerTagline {
   margin-top: 12px;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footerText {
   max-width: 720px;
   margin: 12px auto 0;
   text-align: center;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -487,14 +549,13 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
-  margin: 20px auto 0;
-  max-width: 900px;
+  margin-top: 30px;
   text-align: left;
 }
 
 .footerColumns h4 {
   margin: 0 0 10px;
-  font-size: 16px;
+  font-size: clamp(18px, 1.5vw, 28px);
 }
 
 .footerColumns ul {
@@ -502,9 +563,9 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 8px;
+  gap: 12px;
   color: #86472c;
-  font-size: 13px;
+  font-size: clamp(15px, 1.1vw, 20px);
 }
 
 .footerColumns a {
@@ -517,7 +578,7 @@
   padding-top: 10px;
   border-top: 1px solid rgba(134, 71, 44, 0.2);
   text-align: center;
-  font-size: 13px;
+  font-size: 18px;
 }
 
 @media (max-width: 1100px) {
@@ -544,6 +605,15 @@
 }
 
 @media (max-width: 700px) {
+  .heroContent,
+  .hero {
+    min-height: 0;
+  }
+
+  .heroContent {
+    padding: 82px 0 24px;
+  }
+
   .heroContent,
   .introSection,
   .destinationSection,
@@ -577,7 +647,7 @@
 
   .storyGrid,
   .footerColumns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .seasonalFeature {
@@ -593,8 +663,8 @@
   }
 
   .storyAvatar {
-    width: 64px;
-    height: 64px;
+    width: 128px;
+    height: 128px;
   }
 
   .heroTextGroup h1,
@@ -620,21 +690,6 @@
 }
 
 @media (max-width: 480px) {
-  .storyGrid,
-  .footerColumns {
-    grid-template-columns: 1fr;
-  }
-
-  .themeCard {
-    min-height: 360px;
-  }
-
-  .storyCard p {
-    min-height: 0;
-  }
-}
-
-@media (max-width: 480px) {
   .heroContent,
   .introSection,
   .destinationSection,
@@ -647,11 +702,11 @@
   }
 
   .hero {
-    min-height: 390px;
+    min-height: 0;
   }
 
   .heroContent {
-    min-height: 390px;
+    min-height: 0;
     padding-top: 78px;
   }
 
@@ -660,36 +715,115 @@
   }
 
   .destinationCard {
-    height: 130px;
+    height: auto;
+    aspect-ratio: 462 / 292;
   }
 
   .destinationInfo {
-    left: 9px;
-    right: 9px;
-    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
   }
 
-  .destinationInfo h3 {
-    font-size: 16px;
+  .destinationInfo strong {
+    font-size: 19px;
   }
 
   .destinationInfo span {
-    font-size: 10px;
+    font-size: 13px;
+  }
+
+  .themeGrid {
+    grid-auto-columns: 86vw;
   }
 
   .themeCard {
-    padding: 8px;
+    min-height: auto;
+    padding: 8px 8px 14px;
   }
 
-  .themeImage {
-    height: 110px;
+  .themeImageWrap {
+    height: 170px;
+  }
+
+  .themeCard h3 {
+    font-size: 26px;
   }
 
   .themeCard p {
-    font-size: 11px;
+    font-size: 13px;
+    min-height: 0;
+  }
+
+  .seasonalCarousel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .seasonalFeature {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .seasonalTextBlock {
+    padding: 24px 18px 20px;
+  }
+
+  .seasonalTitle {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  .seasonalTitle span {
+    font-size: 18px;
+  }
+
+  .seasonalTextBlock h3 {
+    font-size: 26px;
+    margin-top: 18px;
+  }
+
+  .seasonalTextBlock p {
+    font-size: 18px;
+  }
+
+  .seasonalImageWrap {
+    min-height: 250px;
+  }
+
+  .storyGrid,
+  .footerColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .storyCard {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .storyAvatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .authorMeta {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .storyCard p {
+    min-height: 0;
+    text-align: center;
   }
 
   .footerColumns {
     gap: 18px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroBg {
+    animation: none;
   }
 }

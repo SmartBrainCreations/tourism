@@ -626,37 +626,6 @@ export default function WestBengalPage() {
         </details>
       </section>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerBrand}>Journey Through Ages</div>
-        <p className={styles.footerTagline}>Discover India, One Story at a Time</p>
-        <p className={styles.footerText}>
-          Journey through West Bengal’s landscapes, literature, architecture,
-          festivals, and cuisine — from Kolkata and Shantiniketan to
-          Darjeeling and the Sundarbans.
-        </p>
-        <nav className={styles.footerLinks} aria-label="Footer navigation">
-          <div>
-            <h3>Quick Links</h3>
-            <Link href="/">Home</Link>
-            <Link href="/states">Explore</Link>
-            <Link href="/experiences">Experiences</Link>
-            <Link href="/travel-guides">Travel Guides</Link>
-            <Link href="/blog">Blog</Link>
-          </div>
-          <div>
-            <h3>Resources</h3>
-            <Link href="/about-india">About India</Link>
-            <a href="mailto:hello@journeythroughages.com">Contact Us</a>
-          </div>
-          <div>
-            <h3>Connect With Us</h3>
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://www.youtube.com/">YouTube</a>
-            <a href="https://www.facebook.com/">Facebook</a>
-          </div>
-        </nav>
-        <p className={styles.copyright}>© 2025 Incredible India 360. All Rights Reserved.</p>
-      </footer>
     </main>
   );
 }

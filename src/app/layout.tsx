@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kalam } from "next/font/google";
 import SiteNav from "./site-nav";
+import SiteFooter from "./site-footer";
 import "./globals.css";
 
 const kalam = Kalam({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <SiteNav />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

@@ -354,6 +354,16 @@
     padding-right: 18px;
   }
 
+  .featureImageWrap img,
+  .imageWrapLeft img,
+  .imageWrapRight img {
+    height: clamp(220px, 70vw, 320px);
+  }
+
+  .fullWidthImageWrap img {
+    height: clamp(190px, 55vw, 300px);
+  }
+
   .titleBlock h1 {
     text-decoration: none;
   }
